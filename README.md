@@ -1,0 +1,2 @@
+[![Build Status](https://travis-ci.com/amirismagilov/store_revenue.svg?branch=master)](https://travis-ci.com/amirismagilov/store_revenue)
+[![codecov](https://codecov.io/gh/amirismagilov/store_revenue/branch/master/graph/badge.svg)](https://codecov.io/gh/amirismagilov/store_revenue)
