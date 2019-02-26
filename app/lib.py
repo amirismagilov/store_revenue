@@ -99,8 +99,8 @@ def min_revenue_store_finding(stores_revenue):
     >>> min_revenue_store_finding([[1,1,1], [2,2,2,], [4, 2, 3]])
     [0]
 
-    >>> min_revenue_store_finding([[10, 20, 30], [15, 100, 100]])
-    [0]
+    >>> min_revenue_store_finding([[10, 20, 30], [15, 100, 100], [9]])
+    [2]
 
     >>> min_revenue_store_finding([[0], [0]])
     [0, 1]
