@@ -62,26 +62,93 @@ def max_average_store_finding(stores_revenue):
 
     return max_average_store_number
 
-stores_revenue = [[1,1,1], [2,2,2,], [1, 2, 3]]
-def max_revenue_finding(stores_revenue):
-    # """
-    # >>> max_revenue_finding([[1,1,1], [2,2,2,], [1, 2, 3]])
-    # [2]
-    #
-    # >>> max_revenue_finding([[10, 20, 30], [15, 100, 100]])
-    # [1]
-    #
-    # >>> max_revenue_finding([[0], [0]])
-    # [0,1]
-    # """
+
+def max_revenue_store_finding(stores_revenue):
+    """
+    >>> max_revenue_store_finding([[1,1,1], [2,2,2,], [1, 2, 3]])
+    [2]
+
+    >>> max_revenue_store_finding([[10, 20, 30], [15, 100, 100]])
+    [1]
+
+    >>> max_revenue_store_finding([[0], [0]])
+    [0, 1]
+    """
     max_revenue_stores = []
     for element in stores_revenue:
         max_revenue_stores.append(max(element))
-    print(max_revenue_stores)
-    total_max_revenue = max(max_revenue_stores)
-    return max_revenue_stores.index(total_max_revenue)
+    # print(max_revenue_stores)
+    # total_max_revenue = max(max_revenue_stores)
+    # max_revenue_store = [max_revenue_stores.index(total_max_revenue)] * max_revenue_stores.count(total_max_revenue)
+    # print(max_revenue_store)
 
+    len_max_revenue_stores = len(max_revenue_stores)
+    total_max_revenue = max_revenue_stores[0]
+    total_max_store_number = []
+    number = 0
+    while number < len_max_revenue_stores:
+        if total_max_revenue < max_revenue_stores[number]:
+            total_max_revenue = max_revenue_stores[number]
+            total_max_store_number.clear()
+            total_max_store_number.append(number)
 
+        elif total_max_revenue == max_revenue_stores[number]:
+            total_max_store_number.append(number)
+        number += 1
+    # print(total_max_store_number)
+    return total_max_store_number
+
+def min_revenue_store_finding(stores_revenue):
+    """
+    >>> min_revenue_store_finding([[1,1,1], [2,2,2,], [4, 2, 3]])
+    [0]
+
+    >>> min_revenue_store_finding([[10, 20, 30], [15, 100, 100]])
+    [0]
+
+    >>> min_revenue_store_finding([[0], [0]])
+    [0, 1]
+    """
+    min_revenue_stores = []
+    for element in stores_revenue:
+        min_revenue_stores.append(min(element))
+    # print(max_revenue_stores)
+    # total_max_revenue = max(max_revenue_stores)
+    # max_revenue_store = [max_revenue_stores.index(total_max_revenue)] * max_revenue_stores.count(total_max_revenue)
+    # print(max_revenue_store)
+
+    len_min_revenue_stores = len(min_revenue_stores)
+    total_min_revenue = min_revenue_stores[0]
+    total_min_store_number = []
+    number = 0
+    while number < len_min_revenue_stores:
+        if total_min_revenue > min_revenue_stores[number]:
+            total_min_revenue = min_revenue_stores[number]
+            total_min_store_number.clear()
+            total_min_store_number.append(number)
+
+        elif total_min_revenue == min_revenue_stores[number]:
+            total_min_store_number.append(number)
+        number += 1
+    # print(total_max_store_number)
+    return total_min_store_number
+
+def top_three_revenue_store_finding(stores_revenue):
+    """
+    >>> top_three_revenue_store_finding([[1,2,3,4,5,6,7], [8,9,5,10,6], [4, 2, 11, 3, 12, 13]])
+    [[5, 6, 7], [8, 9, 10], [11, 12, 13]]
+
+    # >>> min_revenue_store_finding([[10, 20, 30], [15, 100, 100]])
+    # [0]
+    #
+    # >>> min_revenue_store_finding([[0], [0]])
+    # [0, 1]
+    """
+    top_three_revenue_store = []
+    for element in stores_revenue:
+        element.sort()
+        top_three_revenue_store.append(element[-3:])
+    return top_three_revenue_store
 
 
 
