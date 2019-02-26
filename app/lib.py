@@ -1,7 +1,3 @@
-# stores_revenue = [[10, 20, 30, 40, 50, 60, 70], [15, 100, 26, 100, 100, 0, 2]]
-from typing import List, Any
-
-
 def max_sum_store_finding(stores_revenue):
     """
     >>> max_sum_store_finding([[10, 20, 30, 40, 50, 60, 70], [15, 100, 26, 100, 100, 0, 2], [1, 2, 3]])
@@ -138,14 +134,12 @@ def top_three_revenue_store_finding(stores_revenue):
     >>> top_three_revenue_store_finding([[1,2,3,4,5,6,7], [8,9,5,10,6], [4, 2, 11, 3, 12, 13]])
     [[5, 6, 7], [8, 9, 10], [11, 12, 13]]
 
-    # >>> min_revenue_store_finding([[10, 20, 30], [15, 100, 100]])
-    # [0]
-    #
-    # >>> min_revenue_store_finding([[0], [0]])
-    # [0, 1]
+    >>> top_three_revenue_store_finding([[6,7], [8,9,5,10,6], [4, 2, 11, 3, 12, 13]])
+    [[6, 7], [8, 9, 10], [11, 12, 13]]
     """
     top_three_revenue_store = []
     for element in stores_revenue:
+        # element = list(set(element)) #если необходимо выводить только уникальные значения
         element.sort()
         top_three_revenue_store.append(element[-3:])
     return top_three_revenue_store
